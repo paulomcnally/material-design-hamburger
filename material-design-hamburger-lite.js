@@ -1,6 +1,7 @@
 (function() {
   'use strict';
-  document.addEventListener('DOMContentLoaded', function() {
+
+  function materialDesignHamburger() {
     document.querySelector('.material-design-hamburger__icon').addEventListener('click', function() {
       var child = this.childNodes[0].classList;
       if (child.contains('material-design-hamburger__icon--to-arrow')) {
@@ -12,5 +13,14 @@
         child.add('material-design-hamburger__icon--to-arrow');
       }
     });
+  }
+  // Document ready
+  document.addEventListener('DOMContentLoaded', function() {
+    materialDesignHamburger();
+  });
+
+  // Rails Turbolinks
+  document.addEventListener('page:change', function() {
+    materialDesignHamburger();
   });
 })();
